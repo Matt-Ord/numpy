@@ -1,13 +1,16 @@
 """ Basic functions for manipulating 2d arrays
 
 """
+from numpy.typing import (
+    _ArrayND,
+)
 import functools
 
 from numpy.core.numeric import (
     asanyarray, arange, zeros, greater_equal, multiply, ones,
     asarray, where, int8, int16, int32, int64, intp, empty, promote_types,
     diagonal, nonzero, indices
-    )
+)
 from numpy.core.overrides import set_array_function_like_doc, set_module
 from numpy.core import overrides
 from numpy.core import iinfo
@@ -156,7 +159,7 @@ def _eye_dispatcher(N, M=None, k=None, dtype=None, order=None, *, like=None):
 
 @set_array_function_like_doc
 @set_module('numpy')
-def eye(N, M=None, k=0, dtype=float, order='C', *, like=None):
+def eye(N: int, M=None, k: int = 0, dtype=float, order='C', *, like=None) -> _ArrayND:
     """
     Return a 2-D array with ones on the diagonal and zeros elsewhere.
 
