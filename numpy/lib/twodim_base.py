@@ -159,7 +159,7 @@ def _eye_dispatcher(N, M=None, k=None, dtype=None, order=None, *, like=None):
 
 @set_array_function_like_doc
 @set_module('numpy')
-def eye(N, M=None, k=0, dtype=float, order='C', *, like=None):
+def eye(N: int, M=None, k: int = 0, dtype=float, order='C', *, like=None) -> _ArrayND:
     """
     Return a 2-D array with ones on the diagonal and zeros elsewhere.
 
